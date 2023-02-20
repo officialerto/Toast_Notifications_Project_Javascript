@@ -1,0 +1,182 @@
+* {
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+
+}
+
+:root {
+	--dark: #34495E;
+	--light: #fff;
+	--success: #0ABF30;
+	--error: #E24D4C;
+	--warning: #E9BD0C;
+	--info: #3498DB;
+}
+
+body {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--dark);
+}
+
+.notifications {
+
+	position: fixed;
+	top: 30px;
+	right: 20px;
+
+}
+
+.notifications :where(.toast, .column) {
+
+	display: flex;
+	align-items: center;
+
+}
+
+.notifications .toast {
+
+	width:400px;
+	list-style: none;
+	position: relative;
+	border-radius: 4px;
+	padding: 16px 17px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	background-color: var(--light);
+	justify-content: space-between;
+	/*animation: show_toast 0.3s ease forwards;*/
+
+}
+
+@keyframes show_toast{
+
+	0% {
+		transform: translateX(100%);
+	}
+	25% {
+		transform: translateX(-5%);
+	}
+	50% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-10px);
+	}
+
+}
+
+.toast .column i {
+
+	font-size: 1.75rem;
+
+}
+
+.toast.success .column i {
+
+	color: var(--success);
+
+}
+
+.toast.error .column i {
+
+	color: var(--error);
+
+}
+
+.toast.warning .column i {
+
+	color: var(--warning);
+
+}
+
+.toast.info .column i {
+
+	color: var(--info);
+
+}
+
+.toast .column span {
+
+	font-size: 1.07rem;
+	margin-left: 12px;
+	text-transform: uppercase;
+
+}
+
+.toast i:last-child {
+
+	color: #AEB0D7;
+	cursor: pointer;
+
+}
+
+.toast i:last-child:hover {
+
+	color: var(--dark);
+
+}
+
+.toast.success::before, .btn#success {
+
+	background-color: var(--success);
+
+}
+
+.toast.error::before, .btn#error {
+
+	background-color: var(--error);
+
+}
+
+.toast.warning::before, .btn#warning {
+
+	background-color: var(--warning);
+
+}
+
+.toast.info::before, .btn#info {
+
+	background-color: var(--info);
+
+}
+
+.toast::before {
+
+	position: absolute;
+	content: "";
+	height: 3px;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	background-color: red;
+	animation: progress 5s linear forwards;
+
+}
+
+@keyframes progress {
+
+	100% {
+		width: 0%;
+	}
+
+}
+
+.buttons .btn { 
+
+	border: none;
+	outline: none;
+	color: #fff;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 4px;
+	margin: 0 5px;
+	font-size: 1.2rem;
+
+ }
